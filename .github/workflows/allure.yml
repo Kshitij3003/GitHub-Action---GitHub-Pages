@@ -1,0 +1,31 @@
+name: Generate Allure Reports
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-allure-reports:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: 11
+
+      - name: Build and test
+        run: |
+          mvn clean test
+          allure generate --clean
+
+      - name: Push Allure reports to gh-pages branch
+        run: |
+          git checkout -b gh-pages
+          cp -r allure-report/* .
+          git add .
+          git commit -m "Add Allure reports"
+          git push origin gh-pages
