@@ -36,4 +36,4 @@ jobs:
           cp -r allure-report/* .
           git add .
           git commit -m "Add Allure reports"
-          git push https://${{ secrets.GHACTION_SECRET }}@github.com/Kshitij3003/GitHub-Action---GitHub-Pages.git HEAD:gh-pages
+          git push https://${{ secrets.GHACTION_SECRET }}@github.com/Kshitij3003/GitHub-Action---GitHub-Pages.git gh-pages
