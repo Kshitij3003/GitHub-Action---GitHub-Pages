@@ -32,9 +32,9 @@ jobs:
         run: |
           git checkout -b gh-pages
           git config user.email "ksht1994@gmail.com"
-          git config --global --unset http.sslverify
           git config user.name "Kshitij3003"
           cp -r allure-report/* .
           git add .
           git commit -m "Add Allure reports"
+          git remote add origin hhttps://${{ secrets.GHACTION_SECRET }}@github.com/Kshitij3003/GitHub-Action---GitHub-Pages.git
           git push https://${{ secrets.GHACTION_SECRET }}@github.com/Kshitij3003/GitHub-Action---GitHub-Pages.git gh-pages
