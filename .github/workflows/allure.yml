@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up JDK
         run: |
@@ -43,6 +43,4 @@ jobs:
           cp -r allure-report/* .
           git add .
           git commit -m "Add Allure reports"
-          git config pull.ff true
-          git pull origin gh_pages
           git push https://Kshitij3003:${{ secrets.GHACTION_SECRET }}@github.com/Kshitij3003/GitHub-Action---GitHub-Pages.git
