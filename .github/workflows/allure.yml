@@ -37,11 +37,13 @@ jobs:
 
       - name: Push Allure reports to gh-pages branch
         run: |
-          #git push origin --delete gh_pages
-          git checkout -b allure_gh_pages
+          git push origin --delete gh_pages
+          git checkout -b gh_pages
           git config user.email "ksht1994@gmail.com"
           git config user.name "Kshitij3003"
           cp -r allure-report/* .
-          git add data export history plugins widgets app.js favicon.ico index.html styles.css
+          git add allure-report/*
           git commit -m "Add Allure reports"
+          git mv allure-report/* .
+          git commit -m "Add Allure reports to root directory"
           git push https://Kshitij3003:${{ secrets.GHACTION_SECRET }}@github.com/Kshitij3003/GitHub-Action---GitHub-Pages.git
