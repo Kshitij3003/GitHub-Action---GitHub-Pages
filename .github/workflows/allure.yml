@@ -41,6 +41,6 @@ jobs:
           git config user.email "ksht1994@gmail.com"
           git config user.name "Kshitij3003"
           cp -r allure-report/* .
-          git add .
+          git add data export history plugins widgets app.js favicon.io index.html style.css
           git commit -m "Add Allure reports"
           git push https://Kshitij3003:${{ secrets.GHACTION_SECRET }}@github.com/Kshitij3003/GitHub-Action---GitHub-Pages.git
