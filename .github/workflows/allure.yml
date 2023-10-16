@@ -32,8 +32,8 @@ jobs:
       - name: Build and test
         run: |
           mvn clean test
-          allure generate Allure --clean
-          ls -lah
+          allure generate --clean
+          ls -lah allure-report/
 
       - name: Push Allure reports to gh-pages branch
         run: |
