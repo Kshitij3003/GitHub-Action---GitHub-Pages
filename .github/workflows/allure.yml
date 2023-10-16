@@ -37,7 +37,7 @@ jobs:
       - name: Push Allure reports to gh-pages branch
         run: |
           git checkout -b gh_pages
-          git pull
+          git pull origin gh_pages
           git config user.email "ksht1994@gmail.com"
           git config user.name "Kshitij3003"
           cp -r allure-report/* .
