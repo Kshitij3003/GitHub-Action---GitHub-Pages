@@ -39,9 +39,8 @@ jobs:
         run: |
           #git push origin --delete gh_pages
           git checkout -b gh_pages
-          git stash
+          git config pull.rebase true
           git pull origin gh_pages
-          git stash apply
           git config user.email "ksht1994@gmail.com"
           git config user.name "Kshitij3003"
           #cp -r allure-report/* .
