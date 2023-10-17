@@ -39,7 +39,7 @@ jobs:
         run: |
           git checkout main
           git pull origin main
-          git checkout gh_pages
+          git checkout -b gh_pages
           git rebase main
 
       - name: Push Allure reports to gh-pages branch
