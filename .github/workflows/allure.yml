@@ -42,10 +42,11 @@ jobs:
           git config user.name "Kshitij3003"
           rm -rf *
           #cp -r allure-report/* .
+          mkdir -p allure-report
+          cp -r allure-report/* allure-report/
           git add allure-report/*
           git commit -m "Add Allure reports"
-          git pull origin main --rebase
-          git mv allure-report/* .
+          git mv allure-report/index.html .
           git commit -m "Add Allure reports to root directory"
           git push https://Kshitij3003:${{ secrets.GHACTION_SECRET }}@github.com/Kshitij3003/GitHub-Action---GitHub-Pages.git
       
