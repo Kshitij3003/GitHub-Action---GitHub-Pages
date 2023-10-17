@@ -40,7 +40,6 @@ jobs:
           git checkout gh-pages || git checkout --orphan gh-pages
           git config user.email "ksht1994@gmail.com"
           git config user.name "Kshitij3003"
-          rm -rf *
           #cp -r allure-report/* .
           mkdir -p allure-report
           cp -r allure-report/* allure-report/
