@@ -39,6 +39,7 @@ jobs:
         run: |
           git checkout gh-pages || git checkout --orphan gh-pages
           git reset --hard
+          git pull origin gh-pages
           git config user.email "ksht1994@gmail.com"
           git config user.name "Kshitij3003"
           #cp -r allure-report/* .
