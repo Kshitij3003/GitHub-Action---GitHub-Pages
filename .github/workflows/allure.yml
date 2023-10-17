@@ -45,5 +45,4 @@ jobs:
           git commit -m "Add Allure reports"
           git mv allure-report/* .
           git commit -m "Add Allure reports to root directory"
-          git push -f origin gh-pages https://Kshitij3003:${{ secrets.GHACTION_SECRET }}@github.com/Kshitij3003/GitHub-Action---GitHub-Pages.git
-      
+          git push -f origin gh-pages   
