@@ -34,13 +34,6 @@ jobs:
           mvn clean test
           allure generate --clean
           ls -lah allure-report/
-      
-      - name: Update gh-pages branch
-        run: |
-          git checkout main
-          git pull origin main
-          git checkout -b gh_pages
-          git rebase main || git rebase --abort
 
       - name: Push Allure reports to gh-pages branch
         run: |
@@ -52,5 +45,6 @@ jobs:
           git commit -m "Add Allure reports"
           git mv allure-report/* .
           git commit -m "Add Allure reports to root directory"
+          git pull origin main --rebase
           git push https://Kshitij3003:${{ secrets.GHACTION_SECRET }}@github.com/Kshitij3003/GitHub-Action---GitHub-Pages.git
       
